@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.board {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.column {
+    width: 30%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+    position: relative;
+}
+
+.item {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+
+.backlog {
+    background-color: #d3d3d3; /* Cinza claro */
+}
+
+.todo {
+    background-color: #add8e6; /* Azul claro */
+}
+
+.done {
+    background-color: #90ee90; /* Verde claro */
+}
+
+.item.dragging {
+    opacity: 0.5;
+}
+
+/* Botão de adicionar tarefa */
+.add-task {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.add-task:hover {
+    background-color: #218838;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 450px; /* Aumentando a largura do pop-up */
+}
+
+.popup .text-center button {
+    width: 100px; /* Ajuste opcional para deixar os botões uniformes */
+}
+
+.popup .d-flex button {
+    width: auto; /* Botões no canto inferior podem ser de tamanho flexível */
+}
+
+/* Botões alinhados ao canto inferior direito */
+.popup .d-flex {
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Seção de comentários */
+.comments-section {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 15px;
+    max-height: 150px;
+    overflow-y: auto;  /* Adicionar scroll se os comentários ultrapassarem o limite */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comments-section .comment {
+    margin-bottom: 10px;
+}
+
+.comments-section img {
+    max-width: 100%;  /* Imagem não vai ultrapassar a largura */
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
